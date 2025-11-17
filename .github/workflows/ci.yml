@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  SECRET: ${secrets.DEMO_SECRET}
+  SECRET: ${{secrets.DEMO_SECRET}}
 
 jobs:
   build:
