@@ -11,4 +11,4 @@ jobs:
       - name: Secret auswerten
         run: >
           echo "Länge des Secrets: " 
-          length(${{ secrets.DEMO_SECRET }})
+          ${#{secrets.DEMO_SECRET}}
