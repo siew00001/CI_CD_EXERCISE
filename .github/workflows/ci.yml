@@ -27,7 +27,7 @@ jobs:
         run: mvn clean compile
       - name: Testen
         run: mvn test
-      - uses: echapmanFromBunnings/upload-artifact@3.0
+      - uses: actions/upload-artifact@v4
         with:
           name: 'calculator-artifact'
           path: './.github/artifacts'
