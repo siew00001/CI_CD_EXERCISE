@@ -21,3 +21,10 @@ jobs:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
           cache: maven
+      - name: Dependencies installieren
+        run: mvn dependency:resolve
+      - name: Code kompilieren
+        run: mvn clean compile
+      - name: Testen
+        run: mvn test
+      
