@@ -1,0 +1,30 @@
+name: CI_CD
+on:
+  push:
+    branches:
+      - main
+env:
+  SECRET: ${{secrets.DEMO_SECRET}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Secret auswerten
+        run: >
+          echo "Länge des Secrets: " 
+          ${#SECRET}
+      - name: Java aufsetzen
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+          cache: maven
+      - name: Dependencies installieren
+        run: mvn dependency:resolve
+      - name: Code kompilieren
+        run: mvn clean compile
+      - name: Testen
+        run: mvn test
+      
