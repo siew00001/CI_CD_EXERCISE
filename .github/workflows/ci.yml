@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v5
       - name: Secret auswerten
         run: >
           echo "Länge des Secrets: " 
@@ -19,3 +20,4 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
+          cache: maven
