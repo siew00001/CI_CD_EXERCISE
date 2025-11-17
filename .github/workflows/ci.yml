@@ -27,4 +27,6 @@ jobs:
         run: mvn clean compile
       - name: Testen
         run: mvn test
+      - name: Build-Artefakt erstellen
+        run: mvn package
       
