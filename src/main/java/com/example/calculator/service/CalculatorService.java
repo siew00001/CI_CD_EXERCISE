@@ -11,7 +11,7 @@ public class CalculatorService {
      */
     public double add(double a, double b) {
         // TODO: Fix this - currently multiplies instead of adding
-        return a * b;
+        return a + b;
         // SOLUTION: return a + b;
     }
 
@@ -21,7 +21,7 @@ public class CalculatorService {
      */
     public double subtract(double a, double b) {
         // TODO: Fix this - currently adds instead of subtracting
-        return a + b;
+        return a - b;
         // SOLUTION: return a - b;
     }
 
@@ -37,13 +37,10 @@ public class CalculatorService {
      * BUG: This implementation doesn't handle division by zero!
      */
     public double divide(double a, double b) {
-        // TODO: Fix this - should throw exception or return proper error for division by zero
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero is not allowed");
+        }
         return a / b;
-        // SOLUTION:
-        // if (b == 0) {
-        //     throw new ArithmeticException("Division by zero is not allowed");
-        // }
-        // return a / b;
     }
 
     /**
