@@ -29,5 +29,9 @@ jobs:
         run: mvn test
       - name: Artefakt erstellen
         run: mvn package
+      - name: Artifakt hochladen
+        uses: actions/upload-artifact@v4
+        with: 
+          path: target/calculator-api.jar
       
       
