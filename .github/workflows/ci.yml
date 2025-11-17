@@ -1,0 +1,14 @@
+name: CI_CD
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Secret auswerten
+        run: |
+          echo "Länge des Secrets: "
+          echo ${{ secrets.DEMO_SECRET }}
