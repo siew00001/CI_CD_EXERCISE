@@ -14,3 +14,8 @@ jobs:
         run: >
           echo "Länge des Secrets: " 
           ${#SECRET}
+      - name: Java aufsetzen
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
