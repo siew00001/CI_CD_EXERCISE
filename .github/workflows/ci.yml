@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Secret auswerten
-        run: |
-          echo "Länge des Secrets: "
-          echo ${{ secrets.DEMO_SECRET }}
+        run: >
+          echo "Länge des Secrets: " 
+          length(${{ secrets.DEMO_SECRET }})
